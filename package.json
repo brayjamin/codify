@@ -1,6 +1,6 @@
 {
   "name": "@brayjamin/codify",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Wrapper for stdlib.data which simplifies linking data and Minecraft objects. (forked from @harrix432/codify on npm.)",
   "main": "index.js",
   "scripts": {
