@@ -1,0 +1,31 @@
+{
+  "name": "@brayjamin/codify",
+  "version": "1.0.0",
+  "description": "Wrapper for stdlib.data which simplifies linking data and Minecraft objects. (forked from @harrix432/codify on npm.)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brayjamin/codify.git"
+  },
+  "dependencies": {
+    "@grakkit/stdlib-paper": "1.0.14"
+  },
+  "devDependencies": {
+    "typescript": "4.4.3"
+  },
+  "keywords": [
+    "minecraft",
+    "grakkit",
+    "codify",
+    "paper"
+  ],
+  "author": "brayjamin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/brayjamin/codify/issues"
+  },
+  "homepage": "https://github.com/brayjamin/codify#readme"
+}
