@@ -96,8 +96,14 @@ const Vector = type('org.bukkit.util.Vector');
 // only used to define internal variable types
 type NBTTag = { new (...args: any[]): any; a(value: any): any };
 
-//@ts-expect-error
-const NMS = `net.minecraft.server.${server.getClass().getCanonicalName().split('.')[3]}`;
+const NMS: string = (() => {
+   const item = new ItemStack(Material.STONE).ensureServerConversions();
+   const meta = item.getItemMeta();
+   meta.setDisplayName('sus');
+   item.setItemMeta(meta);
+   //@ts-expect-error
+   return item.handle.getTag().getClass().getCanonicalName().split('.').slice(0, -1).join('.');
+})();
 //@ts-expect-error
 const NBTTagByte: NBTTag = type(`${NMS}.NBTTagByte`);
 //@ts-expect-error

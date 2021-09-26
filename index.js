@@ -20,8 +20,14 @@ const PersistentDataType = (0, stdlib_paper_1.type)('org.bukkit.persistence.Pers
 const SpawnReason = (0, stdlib_paper_1.type)('org.bukkit.event.entity.CreatureSpawnEvent.SpawnReason');
 const UUID = (0, stdlib_paper_1.type)('java.util.UUID');
 const Vector = (0, stdlib_paper_1.type)('org.bukkit.util.Vector');
-//@ts-expect-error
-const NMS = `net.minecraft.server.${stdlib_paper_1.server.getClass().getCanonicalName().split('.')[3]}`;
+const NMS = (() => {
+    const item = new ItemStack(Material.STONE).ensureServerConversions();
+    const meta = item.getItemMeta();
+    meta.setDisplayName('sus');
+    item.setItemMeta(meta);
+    //@ts-expect-error
+    return item.handle.getTag().getClass().getCanonicalName().split('.').slice(0, -1).join('.');
+})();
 //@ts-expect-error
 const NBTTagByte = (0, stdlib_paper_1.type)(`${NMS}.NBTTagByte`);
 //@ts-expect-error
